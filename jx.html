@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>矩形</title>
+	<style>
+        #canvas{
+            border:2px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+	<canvas id="canvas" width="600" height="600"></canvas>
+
+	 <script>
+        var can = document.getElementById('canvas');
+        
+        var con = can.getContext('2d');
+
+        con.strokeStyle = 'red';
+        //储存绘画环境
+        con.save();
+
+        con.translate(can.width/2,can.height/2);
+        con.strokeRect(-100,-100,200,200);
+        con.rotate(0.25*Math.PI);
+
+        con.strokeRect(-100,-100,200,200);
+        con.restore()
+     </script>
+</body>
+</html>
